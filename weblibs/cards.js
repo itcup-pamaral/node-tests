@@ -10,7 +10,7 @@ function placeCards( parentElem , cardsJson , cardBodyGenerator) //, bodyParams)
         //card header
         var headerDiv = $("<div>").addClass("panel-heading clearfix");
         headerDiv.append( 
-            $("<h3>").html(currentActivity.name)
+            $("<h3>").html(currentActivity.name_diag)
                     .addClass("panel-title pull-left"),
             $("<a>").attr("href","javascript:alert('clicked header button')")
                     .addClass("btn btn-primary pull-right")
@@ -38,7 +38,7 @@ function cardBodyAsList( activity ) //, bodyParams)
         key;
 
     for( key in activity){
-        if(key != 'id')
+        if(key != 'id' && key != 'name_diag')
             cardBody.append( genListEntry(key, activity[key] ) );
     }
 
