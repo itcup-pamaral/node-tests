@@ -7,7 +7,7 @@ var router = require('./routes');
 var app = express();
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
-pp.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 router.configure(app);
