@@ -11,10 +11,7 @@ function placeCards( parentElem , cardsJson , cardBodyGenerator) //, bodyParams)
         var headerDiv = $("<div>").addClass("panel-heading clearfix");
         headerDiv.append( 
             $("<h3>").html(currentActivity.name_diag)
-                    .addClass("panel-title pull-left"),
-            $("<a>").attr("href","javascript:alert('clicked header button')")
-                    .addClass("btn btn-primary pull-right")
-                    .append( $("<i>").addClass("fa fa-pencil") , "Open" ) 
+                    .addClass("panel-title pull-left")
         );
 
         //card body
@@ -22,7 +19,9 @@ function placeCards( parentElem , cardsJson , cardBodyGenerator) //, bodyParams)
 
         //card footer
         var footerDiv = $("<div>").addClass("panel-footer").append(
-            $("<small>").html("Rendered activity with id '" + currentActivity.id + "'")
+           $("<a>").attr("href","javascript:alert('clicked header button')")
+                    .addClass("btn btn-primary pull-right")
+                    .append( $("<i>").addClass("fa fa-pencil") , "Open" ) 
         );
 
         cardDiv.append( headerDiv, bodyDiv, footerDiv );
