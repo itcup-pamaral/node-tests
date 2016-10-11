@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyparser = require('body-parser');
 var router = require('./routes');
-
+var connection = require('./connection');
 
  
 var app = express();
@@ -11,7 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use('/weblibs', express.static( __dirname + '/weblibs'));
 
-router.init();
+connection.init();
 router.configure(app);
 
  
