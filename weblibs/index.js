@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
 
 
-    var jsonData = { activities : [
+    /*var jsonData = { activities : [
         { 
             id : 1 , 
             name : "activity1", 
@@ -35,8 +35,28 @@ $(document).ready(function(){
             owner : "Pedro Amaral"
         },
     ]};
-
+    
     placeCards( $("#cards"), jsonData, cardBodyAsList );
+    */
+
+    $.ajax({
+        async : true ,
+        contentType : "application/json" ,
+        url : "activity",
+        dataType : "json",
+        method : "GET",
+        success: function(jsonData)
+        {
+            placeCards( $("#cards"), jsonData, cardBodyAsList );
+        },
+        error: function(err)
+        {
+            console.log("Error in ajax call to '/activity'");
+            console.log(err);
+        }
+    });
+
+ 
 
 
 });
