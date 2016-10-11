@@ -38,7 +38,8 @@ function cardBodyAsList( activity ) //, bodyParams)
         key;
 
     for( key in activity){
-        cardBody.append( genListEntry(key, activity[key] ) );
+        if(key != 'id')
+            cardBody.append( genListEntry(key, activity[key] ) );
     }
 
 //    bodyParams.forEach( function (val,idx,arr){
