@@ -28,5 +28,9 @@ module.exports = {
     app.get('/activity/:id/', function(req, res) {
       res.send( { id : req.params.id , name : 'activity number ' + req.params.id , description : 'this describes the activity', owner : 'pedro amaral' } );
     });
+
+    app.get('/', function(req,res){
+      res.render( 'index', { title: "ITCup test" } );
+    });
   }
 };
