@@ -10,8 +10,7 @@ app.use(bodyparser.json());
 router.configure(app);
 
 app.get('/', function(req,res){
-	res.send( '<html><head><title>its on!!</title></head><body><h1>these words say this, and these words dont!</h1></body></html>' );
-
+	res.render( 'index', { title: "ITCup test" } );
 });
 
  
