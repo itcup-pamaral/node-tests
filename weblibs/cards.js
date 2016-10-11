@@ -1,6 +1,6 @@
 
 
-function placeCards( parentElem , cardsJson , cardBodyGenerator)
+function placeCards( parentElem , cardsJson , cardBodyGenerator) //, bodyParams)
 {
 
     var mainDiv = $("<div>").addClass("col-md-12 bootcards-cards");
@@ -32,15 +32,23 @@ function placeCards( parentElem , cardsJson , cardBodyGenerator)
     parentElem.append(mainDiv);
 }
 
-function cardBodyAsList( activity )
+function cardBodyAsList( activity ) //, bodyParams)
 {
-    var cardBody = $("<div>").addClass( "list-group" );
+    var cardBody = $("<div>").addClass( "list-group" ),
+        key;
 
-    cardBody.append( 
-        genListEntry( "Name", activity.name ),
-        genListEntry( "Owner", activity.owner),
-        genListEntry( "Description", activity.description ) 
-    );
+    for( key in activity){
+        cardBody.append( genListEntry(key, activity[key] ) );
+    }
+
+//    bodyParams.forEach( function (val,idx,arr){
+//        genListEntry(val, activity[val] );
+//    });
+//    cardBody.append( 
+//        genListEntry( "Name", activity.name ),
+//        genListEntry( "Owner", activity.owner),
+//        genListEntry( "Description", activity.description ) 
+//    );
 
     return cardBody;
 }
