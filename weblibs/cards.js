@@ -5,7 +5,7 @@ function placeCards( parentElem , cardsJson , cardBodyGenerator) //, bodyParams)
 
     var mainDiv = $("<div>").addClass("col-md-12 bootcards-cards");
 
-    cardsJson.activities.forEach( function(currentActivity,index,arr){
+    cardsJson.forEach( function(currentActivity,index,arr){
         var cardDiv = $("<div>").addClass("panel col-md-3");
         //card header
         var headerDiv = $("<div>").addClass("panel-heading clearfix");

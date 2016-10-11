@@ -47,7 +47,7 @@ $(document).ready(function(){
         method : "GET",
         success: function(jsonData)
         {
-            console.log(jsonData);
+            //console.log(jsonData);
             placeCards( $("#cards"), jsonData, cardBodyAsList );
         },
         error: function(err)
