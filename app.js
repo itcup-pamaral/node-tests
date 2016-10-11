@@ -7,7 +7,7 @@ var router = require('./routes');
 var app = express();
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 router.configure(app);
 
