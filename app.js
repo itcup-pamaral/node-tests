@@ -11,6 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use('/weblibs', express.static( __dirname + '/weblibs'));
 
+router.init();
 router.configure(app);
 
  
