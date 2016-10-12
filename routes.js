@@ -30,7 +30,7 @@ module.exports = {
     });
 
     app.get('/', function(req,res){
-      res.render( 'index', { title: "ITCup testooo" } );
+      res.render( 'index', { title: "ITCup test" } );
     });
   }
 };
